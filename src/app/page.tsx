@@ -9,7 +9,7 @@ export default function Home() {
   const [activeSection, setActiveSection] = useState("skills");
 
   const fullText =
-    "$\n> Loading....;
+    "Loading....;
 
   useEffect(() => {
     let index = 0;
