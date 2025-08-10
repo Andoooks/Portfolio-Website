@@ -10,26 +10,28 @@ export default function Home() {
 
   const fullText =
     "Loading...";
+useEffect(() => {
+  let index = 0;
+  const typingSpeed = 40;
 
-  useEffect(() => {
-    let index = 0;
-    const typingSpeed = 40;
-    const typeInterval = setInterval(() => {
-      setTypedText((prev) => prev + fullText[index]);
-      index++;
-      if (index >= fullText.length) clearInterval(typeInterval);
-    }, typingSpeed);
-
-    const portfolioTimer = setTimeout(
-      () => setShowPortfolio(true),
-      fullText.length * typingSpeed + 500
-    );
-
-    return () => {
+  const typeInterval = setInterval(() => {
+    index++;
+    setTypedText(fullText.slice(0, index)); // Always slice from 0 to index
+    if (index === fullText.length) {
       clearInterval(typeInterval);
-      clearTimeout(portfolioTimer);
-    };
-  }, []);
+    }
+  }, typingSpeed);
+
+  const portfolioTimer = setTimeout(() => {
+    setShowPortfolio(true);
+  }, fullText.length * typingSpeed + 500);
+
+  return () => {
+    clearInterval(typeInterval);
+    clearTimeout(portfolioTimer);
+  };
+}, []);
+
 
   if (!showPortfolio) {
     return (
