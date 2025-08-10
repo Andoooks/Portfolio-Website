@@ -52,7 +52,7 @@ export default function Home() {
       {/* Header */}
       <header className="flex flex-col items-center text-center gap-4 mb-8">
         <img
-          src="/Profile.jpg"
+          src="/profile.jpg"
           alt="Profile"
           className="w-28 h-28 sm:w-36 sm:h-36 rounded-full object-cover shadow-lg"
           style={{ border: "4px solid rgba(255,255,255,0.65)" }}
