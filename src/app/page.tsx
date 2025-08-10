@@ -9,7 +9,7 @@ export default function Home() {
   const [activeSection, setActiveSection] = useState("skills");
 
   const fullText =
-    "$ npm run start-portfolio\n> Initializing portfolio...\n> Loading sections...\n> Launching in 3... 2... 1...";
+    "$\n> Initializing portfolio...\n> Loading sections...\n> Launching in 3... 2... 1...";
 
   useEffect(() => {
     let index = 0;
